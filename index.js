@@ -11,6 +11,7 @@ const Discord = require("discord.js"),
 
 // Variables
 var owners = [""];
+var cooldownTime = {};
 
 // Rendering of "commands"
 Client.commands = new Discord.Collection();
@@ -111,8 +112,6 @@ Client.on("ready", () => {
 });
 
 // Client events
-var cooldownTime = {};
-
 Client.on("message", async (message) => {
     const prefix = config.prefix;
     if (message.channel.type == "dm") return;
